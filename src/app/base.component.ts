@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { NbMenuItem } from '@nebular/theme';
+import {Component} from '@angular/core';
+import {MenuItem} from "primeng/api";
 
 @Component({
   selector: 'app-root',
@@ -8,13 +8,11 @@ import { NbMenuItem } from '@nebular/theme';
 })
 export class BaseComponent {
   title = 'LearnExchange';
-
-  items: NbMenuItem[] = [
+  items: MenuItem[] = [
     {
-      title: 'Shopping Bag',
-    },
-    {
-      title: 'Orders',
-    },
-  ];
+      label: 'File',
+      icon: 'pi pi-file',
+      routerLink: 'test'
+    }
+  ]
 }
