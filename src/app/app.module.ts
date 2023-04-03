@@ -1,19 +1,31 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
-import {AppComponent} from './app.component';
+import {BaseComponent} from './base.component';
 import {KatexModule} from "ng-katex";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {NbThemeModule, NbLayoutModule, NbSidebarModule, NbTabsetModule, NbMenuModule} from '@nebular/theme';
+import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    BaseComponent
   ],
   imports: [
     BrowserModule,
-    KatexModule
+    KatexModule,
+    BrowserAnimationsModule,
+    NbThemeModule.forRoot({name: 'dark'}),
+    NbLayoutModule,
+    NbEvaIconsModule,
+    AppRoutingModule,
+    NbSidebarModule,
+    NbTabsetModule,
+    NbMenuModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [BaseComponent]
 })
 export class AppModule {
 }
