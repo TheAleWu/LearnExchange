@@ -1,18 +1,22 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
-import {BaseComponent} from './base.component';
+import {AppComponent} from './app.component';
 import {KatexModule} from "ng-katex";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppRoutingModule} from './app-routing.module';
 import {MenubarModule} from "primeng/menubar";
 import {InputTextModule} from "primeng/inputtext";
-import { TestComponent } from './test.component';
+import { TestComponent } from './test/test.component';
+import { IndexComponent } from './index/index.component';
+import {SidebarModule} from "primeng/sidebar";
+import {ButtonModule} from "primeng/button";
 
 @NgModule({
   declarations: [
-    BaseComponent,
-    TestComponent
+    AppComponent,
+    TestComponent,
+    IndexComponent
   ],
   imports: [
     BrowserModule,
@@ -20,9 +24,12 @@ import { TestComponent } from './test.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     MenubarModule,
-    InputTextModule
+    InputTextModule,
+    SidebarModule,
+    ButtonModule
   ],
-  providers: []
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule {
 }
