@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {NzIconService} from "ng-zorro-antd/icon";
+import {Icons} from "./icons";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   isCollapsed = false;
+
+  constructor(private iconService: NzIconService) {
+    this.iconService.addIconLiteral("fa:table-solid", Icons.tableSolid)
+  }
 }
