@@ -5,30 +5,41 @@ import {AppComponent} from './app.component';
 import {KatexModule} from "ng-katex";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppRoutingModule} from './app-routing.module';
-import {MenubarModule} from "primeng/menubar";
-import {InputTextModule} from "primeng/inputtext";
-import { TestComponent } from './test/test.component';
-import { IndexComponent } from './index/index.component';
-import {SidebarModule} from "primeng/sidebar";
-import {ButtonModule} from "primeng/button";
+import {NzToolTipModule} from "ng-zorro-antd/tooltip";
+import {NzMenuModule} from "ng-zorro-antd/menu";
+import {NzIconModule} from "ng-zorro-antd/icon";
+import {NzButtonModule} from "ng-zorro-antd/button";
+import {de_DE, NZ_I18N} from 'ng-zorro-antd/i18n';
+import {registerLocaleData} from '@angular/common';
+import de from '@angular/common/locales/de';
+import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import {IconsProviderModule} from './icons-provider.module';
+import {NzLayoutModule} from 'ng-zorro-antd/layout';
+
+registerLocaleData(de);
 
 @NgModule({
   declarations: [
-    AppComponent,
-    TestComponent,
-    IndexComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     KatexModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    MenubarModule,
-    InputTextModule,
-    SidebarModule,
-    ButtonModule
+    NzToolTipModule,
+    NzMenuModule,
+    NzIconModule,
+    NzButtonModule,
+    FormsModule,
+    HttpClientModule,
+    IconsProviderModule,
+    NzLayoutModule
   ],
-  providers: [],
+  providers: [
+    {provide: NZ_I18N, useValue: de_DE}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
