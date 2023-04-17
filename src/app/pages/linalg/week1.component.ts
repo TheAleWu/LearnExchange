@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {MultipleChoice} from "../../common/multiple-choice.component";
 
 @Component({
   selector: 'app-week1',
@@ -7,4 +8,18 @@ import { Component } from '@angular/core';
 })
 export class Week1Component {
 
+  question1 : MultipleChoice = {
+    title: "Testfrage",
+    description: `
+    Ist die folgende Aussage korrekt?
+    $$\\int e^x dx = e^x + C$$
+    $$\\vec{a} = \\langle0,1\\rangle$$`,
+    options: [{
+      value: "Ja",
+      correct: true
+    }, {
+      value: "Nein",
+      correct: false
+    }]
+  };
 }

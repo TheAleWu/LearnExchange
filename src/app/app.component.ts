@@ -11,6 +11,8 @@ export class AppComponent {
   isCollapsed = false;
 
   constructor(private iconService: NzIconService) {
-    this.iconService.addIconLiteral("fa:table-solid", Icons.tableSolid)
+    this.iconService.addIconLiteral("fa:moon-regular", Icons.moonRegular)
+    this.iconService.addIconLiteral("fa:sun-regular", Icons.sunRegular)
+    this.iconService.addIconLiteral("fa:clipboard-question-solid", Icons.clipboardQuestionSolid)
   }
 }

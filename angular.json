@@ -30,9 +30,21 @@
               }
             ],
             "styles": [
-              "./node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
-              "src/styles.css"
+              "src/styles.css",
+              {
+                "input": "./node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
+                "bundleName": "default",
+                "inject": false
+              },
+              {
+                "input": "./node_modules/ng-zorro-antd/ng-zorro-antd.dark.min.css",
+                "bundleName": "dark",
+                "inject": false
+              }
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": []
+            },
             "scripts": []
           },
           "configurations": {
@@ -99,7 +111,6 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
               "src/styles.css"
             ],
             "scripts": []

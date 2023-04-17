@@ -1,2 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~node_modules/katex/dist/katex.css';
+@import "src/assets/theme-mixin.less";
+
+.big-font {
+  font-size: 18px;
+}

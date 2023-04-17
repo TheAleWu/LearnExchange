@@ -1,0 +1,31 @@
+<div style="margin-top: 10px;">
+  <nz-card nzBordered="true" [nzTitle]="data.title">
+    <div *ngIf="error === ''; else hasError">
+      <ng-katex-html [html]="data.description"></ng-katex-html>
+      <div *ngIf="data.options.length > 0">
+        <br/>
+        <nz-radio-group [(ngModel)]="selected">
+          <label *ngFor="let option of data.options"
+                 nz-radio ngModel
+                 [nzValue]="option.value">{{option.value}}</label>
+        </nz-radio-group>
+      </div>
+    </div>
+    <ng-template #hasError>
+      <nz-alert
+        nzType="error"
+        nzMessage="Misconfigured multiple choice question"
+        [nzDescription]="error"
+        nzShowIcon
+      ></nz-alert>
+    </ng-template>
+    <div nz-row>
+      <div nz-col class="validation-button">
+        <button nz-button nzType="primary" nzShape="round" (click)="validate()">
+          <span nz-icon nzType="fa:clipboard-question-solid"></span>
+          Check
+        </button>
+      </div>
+    </div>
+  </nz-card>
+</div>

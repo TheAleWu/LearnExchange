@@ -33,7 +33,6 @@
   float: right;
   padding-right: 0.4em;
   line-height: 64px;
-  background: #001529;
   transition: all .3s;
 }
 
@@ -57,6 +56,5 @@ nz-content {
 
 .inner-content {
   padding: 24px;
-  background: #fff;
   height: 100%;
 }

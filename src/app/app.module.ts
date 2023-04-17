@@ -14,9 +14,9 @@ import {registerLocaleData} from '@angular/common';
 import de from '@angular/common/locales/de';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-import {IconsProviderModule} from './icons-provider.module';
 import {NzLayoutModule} from 'ng-zorro-antd/layout';
 import {NzSpaceModule} from "ng-zorro-antd/space";
+import {CommonsModule} from "./common/commons.module";
 
 registerLocaleData(de);
 
@@ -35,9 +35,9 @@ registerLocaleData(de);
     NzButtonModule,
     FormsModule,
     HttpClientModule,
-    IconsProviderModule,
     NzLayoutModule,
-    NzSpaceModule
+    NzSpaceModule,
+    CommonsModule
   ],
   providers: [
     {provide: NZ_I18N, useValue: de_DE}
