@@ -15,7 +15,7 @@ import {NzRadioModule} from "ng-zorro-antd/radio";
 import {FormsModule} from "@angular/forms";
 import {NzGridModule} from "ng-zorro-antd/grid";
 import {ShortInputComponent} from './short-input.component';
-import { QuestionBaseComponent } from './question-base.component';
+import {QuestionBaseComponent} from './question-base.component';
 import {NzInputModule} from "ng-zorro-antd/input";
 
 @NgModule({

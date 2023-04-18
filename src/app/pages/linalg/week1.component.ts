@@ -26,6 +26,6 @@ export class Week1Component {
     title: "Zweite Testfrage",
     description: `
     Was sind die ersten drei Buchstaben des Alphabets`,
-    checkAnswer: a => a.toLowerCase() === "abc"
+    checkAnswer: a => a.replaceAll(" ", "").toLowerCase() === "abc"
   }
 }
