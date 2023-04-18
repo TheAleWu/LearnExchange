@@ -1,20 +1,26 @@
 :host {
-  display: flex;
+  /*display: flex;*/
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 .app-layout {
-  height: 100vh;
+  min-height: 100vh;
 }
 
-nz-content {
-  margin-left: 24px;
-  margin-right: 24px;
+nz-header {
+  padding: 0;
+  margin-bottom: 20px;
 }
 
-.inner-content {
-  padding: 24px;
-  height: 100%;
+nz-footer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.router-content {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }

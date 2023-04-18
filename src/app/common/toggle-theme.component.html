@@ -1,7 +1,5 @@
-<nz-affix [nzOffsetBottom]="20" [nzTarget]="document.body">
-  <button nz-button nzType="primary"
-          nzSize="large" nzShape="circle"
-          (click)="toggleTheme()">
-    <span nz-icon [nzType]="darkTheme ? 'fa:moon-regular' : 'fa:sun-regular'"></span>
-  </button>
-</nz-affix>
+<button nz-button nzType="default"
+        nzSize="large" class="theme-toggle"
+        (click)="toggleTheme()">
+  <span nz-icon [nzType]="darkTheme ? 'fa:moon-regular' : 'fa:sun-regular'"></span>
+</button>

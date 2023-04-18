@@ -1,5 +1,5 @@
-<div style="margin-top: 10px;">
-  <nz-card nzBordered="true" [nzTitle]="title">
+<div class="question-base">
+  <nz-card nzBordered="true" nzType="inner" [nzTitle]="title">
     <div *ngIf="parseError === ''; else hasError">
       <ng-content select="[content]" />
     </div>

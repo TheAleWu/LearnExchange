@@ -1,26 +1,29 @@
 <nz-layout class="app-layout">
-  <ul nz-menu nzTheme="dark" nzMode="horizontal">
-    <li nz-menu-item routerLink="/" nzMatchRouter nzMatchRouterExact>
-      <span nz-icon nzType="home"></span>
-      <span>Startseite</span>
-    </li>
-    <li nz-submenu nzTitle="Lineare Algebra" nzIcon="table">
-      <ul>
-        <li nz-menu-item nzMatchRouter>
-          <a routerLink="/linalg/info">Allgemeine Informationen</a>
-        </li>
-        <li nz-menu-item nzMatchRouter>
-          <a routerLink="/linalg/week-1">Woche 1</a>
-        </li>
-      </ul>
-    </li>
-  </ul>
-  <nz-layout>
-    <nz-content>
-      <div class="inner-content">
-        <router-outlet></router-outlet>
-      </div>
-    </nz-content>
-  </nz-layout>
-  <app-toggle-theme/>
+  <nz-header>
+    <ul nz-menu nzTheme="dark" nzMode="horizontal" >
+      <li nz-menu-item routerLink="/" nzMatchRouter nzMatchRouterExact>
+        <span nz-icon nzType="home"></span>
+        <span>Startseite</span>
+      </li>
+      <li nz-submenu nzTitle="Lineare Algebra" nzIcon="table">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/linalg/info">Allgemeine Informationen</a>
+          </li>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/linalg/week-1">Woche 1</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nz-header>
+  <nz-content>
+    <div class="router-content">
+      <router-outlet></router-outlet>
+    </div>
+  </nz-content>
+  <nz-footer class="ant-menu ant-menu-root ant-menu-dark ant-menu-horizontal">
+    Developed by <a target="_blank" href="https://github.com/TheAleWu/">Alexander Wudy</a>
+    <app-toggle-theme/>
+  </nz-footer>
 </nz-layout>
