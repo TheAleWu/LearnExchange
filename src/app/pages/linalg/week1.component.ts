@@ -12,8 +12,7 @@ export class Week1Component {
     title: "Testfrage",
     description: `
     Ist die folgende Aussage korrekt?
-    $$\\int e^x dx = e^x + C$$
-    $$\\vec{a} = \\langle0,1\\rangle$$`,
+    $$\\int e^x dx = e^x + C$$`,
     options: [{
       value: "Ja",
       correct: true

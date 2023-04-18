@@ -14,12 +14,16 @@ import {NzSelectModule} from "ng-zorro-antd/select";
 import {NzRadioModule} from "ng-zorro-antd/radio";
 import {FormsModule} from "@angular/forms";
 import {NzGridModule} from "ng-zorro-antd/grid";
+import {ShortInputComponent} from './short-input.component';
+import { QuestionBaseComponent } from './question-base.component';
 
 @NgModule({
   declarations: [
     ComingSoonComponent,
     MultipleChoiceComponent,
-    ToggleThemeComponent
+    ToggleThemeComponent,
+    ShortInputComponent,
+    QuestionBaseComponent
   ],
   exports: [
     ComingSoonComponent,

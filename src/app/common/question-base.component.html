@@ -1,0 +1,18 @@
+<div style="margin-top: 10px;">
+  <nz-card nzBordered="true" [nzTitle]="title">
+    <div *ngIf="parseError === ''; else hasError">
+      <ng-content select="[content]" />
+    </div>
+    <ng-template #hasError>
+      <nz-alert
+        nzType="error"
+        nzMessage="Misconfigured short input question"
+        [nzDescription]="parseError"
+        nzShowIcon
+      ></nz-alert>
+    </ng-template>
+    <div class="validation-button">
+      <ng-content select="[validate-trigger]" />
+    </div>
+  </nz-card>
+</div>
