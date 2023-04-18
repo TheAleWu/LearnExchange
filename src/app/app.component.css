@@ -9,49 +9,15 @@
   height: 100vh;
 }
 
-.menu-sidebar {
-  position: relative;
-  z-index: 10;
-  min-height: 100vh;
-  box-shadow: 2px 0 6px rgba(0,21,41,.35);
-}
-
-.header-trigger {
-  height: 64px;
-  padding: 20px 24px;
-  font-size: 20px;
-  cursor: pointer;
-  transition: all .3s,padding 0s;
-}
-
-.trigger:hover {
-  color: #1890ff;
-}
-
-.sidebar-logo {
-  color: white;
-  float: right;
-  padding-right: 0.4em;
-  line-height: 64px;
-  transition: all .3s;
-}
-
 nz-header {
   padding: 0;
   width: 100%;
   z-index: 2;
 }
 
-.app-header {
-  position: relative;
-  height: 64px;
-  padding: 0;
-  background: #fff;
-  box-shadow: 0 1px 4px rgba(0,21,41,.08);
-}
-
 nz-content {
-  margin: 24px;
+  margin-left: 24px;
+  margin-right: 24px;
 }
 
 .inner-content {

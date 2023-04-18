@@ -1,0 +1,28 @@
+<app-question-base [title]="data.title" [parseError]="parseError">
+  <div content>
+    <ng-katex-html [html]="data.description"></ng-katex-html>
+    <nz-divider/>
+    <div *ngIf="feedback !== undefined">
+      <nz-alert
+        [nzType]="feedback.type"
+        [nzMessage]="feedback.title"
+        [nzDescription]="feedback.description"
+        [nzShowIcon]="feedback.showIcon"
+      ></nz-alert>
+      <br/>
+    </div>
+    <input nz-input
+           placeholder="Enter your answer..."
+           [(ngModel)]="answer"
+           [disabled]="feedback?.type == 'success'"/>
+  </div>
+
+  <div validate-trigger>
+    <button nz-button nzType="primary"
+            nzShape="round" (click)="validate()"
+            [disabled]="answer === undefined || answer === '' || feedback?.type == 'success'">
+      <span nz-icon nzType="fa:clipboard-question-solid"></span>
+      Check your answer
+    </button>
+  </div>
+</app-question-base>

@@ -16,6 +16,7 @@ import {FormsModule} from "@angular/forms";
 import {NzGridModule} from "ng-zorro-antd/grid";
 import {ShortInputComponent} from './short-input.component';
 import { QuestionBaseComponent } from './question-base.component';
+import {NzInputModule} from "ng-zorro-antd/input";
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { QuestionBaseComponent } from './question-base.component';
   exports: [
     ComingSoonComponent,
     MultipleChoiceComponent,
-    ToggleThemeComponent
+    ToggleThemeComponent,
+    ShortInputComponent
   ],
   imports: [
     CommonModule,
@@ -42,7 +44,8 @@ import { QuestionBaseComponent } from './question-base.component';
     NzSelectModule,
     NzRadioModule,
     FormsModule,
-    NzGridModule
+    NzGridModule,
+    NzInputModule
   ]
 })
 export class CommonsModule {

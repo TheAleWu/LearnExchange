@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {MultipleChoice} from "../../common/multiple-choice.component";
+import {ShortInput} from "../../common/short-input.component";
 
 @Component({
   selector: 'app-week1',
@@ -8,7 +9,7 @@ import {MultipleChoice} from "../../common/multiple-choice.component";
 })
 export class Week1Component {
 
-  question1 : MultipleChoice = {
+  question1: MultipleChoice = {
     title: "Testfrage",
     description: `
     Ist die folgende Aussage korrekt?
@@ -21,4 +22,10 @@ export class Week1Component {
       correct: false
     }]
   };
+  question2: ShortInput = {
+    title: "Zweite Testfrage",
+    description: `
+    Was sind die ersten drei Buchstaben des Alphabets`,
+    checkAnswer: a => a.toLowerCase() === "abc"
+  }
 }

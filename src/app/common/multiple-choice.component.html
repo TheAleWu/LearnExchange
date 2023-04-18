@@ -24,9 +24,9 @@
   <div validate-trigger>
     <button nz-button nzType="primary"
             nzShape="round" (click)="validate()"
-            [disabled]="selectedOption === undefined">
+            [disabled]="selectedOption === undefined || feedback?.type == 'success'">
       <span nz-icon nzType="fa:clipboard-question-solid"></span>
-      Check
+      Check your answer
     </button>
   </div>
 </app-question-base>

@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Alert} from "./misc.classes";
+import {Alert, CorrectAnswerAlert, WrongAnswerAlert} from "./misc.classes";
 import {parse} from "@fortawesome/fontawesome-svg-core";
 
 @Component({
@@ -49,19 +49,9 @@ export class MultipleChoiceComponent implements OnInit {
   validate() {
     if (this.selectedOption === undefined) return;
     if (this.correctAnswers.includes(this.selectedOption)) {
-      this.feedback = {
-        title: "Good Job!",
-        description: "The selected answer \"" + this.selectedOption + "\" was correct :)",
-        type: "success",
-        showIcon: true
-      }
+      this.feedback = new CorrectAnswerAlert(this.selectedOption);
     } else {
-      this.feedback = {
-        title: "Wrong answer.",
-        description: "Try again.",
-        type: "error",
-        showIcon: true
-      };
+      this.feedback = new WrongAnswerAlert(this.selectedOption);
       this.selectedOption = undefined;
     }
   }

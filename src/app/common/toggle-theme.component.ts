@@ -73,4 +73,5 @@ export class ToggleThemeComponent implements OnInit {
     );
   }
 
+  protected readonly document = document;
 }
