@@ -6,9 +6,10 @@
       <nz-alert
         [nzType]="feedback.type"
         [nzMessage]="feedback.title"
-        [nzDescription]="feedback.description"
+        [nzDescription]="feedbackDescription"
         [nzShowIcon]="feedback.showIcon"
       ></nz-alert>
+      <ng-template #feedbackDescription><ng-katex-html [html]="feedback.description"/></ng-template>
       <br/>
     </div>
     <div *ngIf="data.options.length > 0">
@@ -16,7 +17,10 @@
         <label *ngFor="let option of data.options"
                nz-radio ngModel
                [nzValue]="option.value"
-               [nzDisabled]="feedback !== undefined && feedback.type === 'success'">{{option.value}}</label>
+               [nzDisabled]="feedback !== undefined && feedback.type === 'success'">
+          <ng-katex [equation]="option.value" *ngIf="option.usesKaTeX; else nonKaTeX"/>
+          <ng-template #nonKaTeX>{{option.value}}</ng-template>
+        </label>
       </nz-radio-group>
     </div>
   </div>

@@ -1,0 +1,21 @@
+<!--<app-coming-soon/>-->
+<h1>Grundlagen der komplexen Zahlen</h1>
+<nz-collapse>
+  <nz-collapse-panel
+    *ngFor="let category of categories"
+    [nzHeader]="header"
+    [nzShowArrow]="false">
+    <ng-template #header>
+      <h2 style="margin-bottom: 0">{{category.collapsableName}}</h2>
+    </ng-template>
+
+    <div *ngFor="let question of category.questions">
+      <qt-multiple-choice
+        [data]="$multipleChoiceCast(question)"
+        *ngIf="question.type == QuestionType.MULTIPLE_CHOICE"/>
+      <qt-short-input
+        [data]="$shortInputCast(question)"
+        *ngIf="question.type == QuestionType.SHORT_INPUT"/>
+    </div>
+  </nz-collapse-panel>
+</nz-collapse>

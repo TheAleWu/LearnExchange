@@ -1,11 +1,11 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {IndexComponent} from './index.component';
-import {Week1Component} from "./week1.component";
+import {ComplexNumbersComponent} from "./complex-numbers.component";
 
 const routes: Routes = [
-  {path: 'info', component: IndexComponent},
-  {path: 'week-1', component: Week1Component},
+  // {path: 'info', component: IndexComponent},
+  {path: 'complex-numbers', component: ComplexNumbersComponent},
 ];
 
 @NgModule({
