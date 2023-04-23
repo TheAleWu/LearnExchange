@@ -4,7 +4,7 @@ import {Collapsable} from "../../common/misc.interfaces";
 import {ShortInput} from "../../questiontypes/short-input.component";
 import {castTo} from "../../common/utitilies";
 import {QuestionType} from "../../common/misc.enums";
-import {$MultipleChoice} from "../../questiontypes/utilities.question";
+import {$MultipleChoice, $ShortInput} from "../../questiontypes/utilities.question";
 
 @Component({
   selector: 'app-week1',
@@ -14,16 +14,16 @@ import {$MultipleChoice} from "../../questiontypes/utilities.question";
 export class ComplexNumbersComponent {
 
   categories: Collapsable[] = [
-    new BasicsOfComplexNumbers(),
-    new PolarForm()
+    new Addition(),
+    new Multiplication()
   ]
 
-  $multipleChoiceCast = castTo<MultipleChoice>();
-  $shortInputCast = castTo<ShortInput>();
+  protected readonly $multipleChoiceCast = castTo<MultipleChoice>();
+  protected readonly $shortInputCast = castTo<ShortInput>();
   protected readonly QuestionType = QuestionType;
 }
 
-class BasicsOfComplexNumbers implements Collapsable {
+class Addition implements Collapsable {
 
   addition1 = $MultipleChoice(`
     <center>Was ist das Ergebnis der folgenden Addition,
@@ -48,36 +48,99 @@ class BasicsOfComplexNumbers implements Collapsable {
     }
   ]);
   addition2 = $MultipleChoice(`
-  <center>Was ist das Ergebnis der folgenden Addition,
-    wenn $v=-8i$ und $w=2,5$ gegeben sind?</center>
+    <center>Was ist das Ergebnis der folgenden Addition,
+    wenn $v=-8i$ und $w=2.5$ gegeben sind?</center>
     $$z=v+w$$`, [
     {
-      value: "z=-2,5+8i",
+      value: "z=-2.5+8i",
       correct: false,
       usesKaTeX: true
     },
     {
-      value: "z=2,5-8i",
+      value: "z=2.5-8i",
       correct: true,
       usesKaTeX: true
     },
     {
-      value: "z=-2,5-8i",
+      value: "z=-2.5-8i",
+      correct: false,
+      usesKaTeX: true
+    },
+    {
+      value: "z=-5.5+2.5i",
+      correct: false,
+      usesKaTeX: true
+    }
+  ]);
+  addition3 = $MultipleChoice(`
+    <center>Welches Ergebnis erzeugt die folgende Addition?</center>
+    $$(4+3i)+(-5+2i)$$`, [
+    {
+      value: "-1+5i",
       correct: true,
       usesKaTeX: true
     },
-  ])
+    {
+      value: "9-i",
+      correct: false,
+      usesKaTeX: true
+    },
+    {
+      value: "1-5i",
+      correct: false,
+      usesKaTeX: true
+    },
+    {
+      value: "-9+i",
+      correct: false,
+      usesKaTeX: true
+    }
+  ]);
+  addition4 = $MultipleChoice(`
+    <center>Welches Ergebnis erzeugt die folgende Addition?</center>
+    $$\\frac{6-4i}{2}+5$$`, [
+    {
+      value: "\\frac{11-4i}{2}",
+      correct: false,
+      usesKaTeX: true
+    },
+    {
+      value: "\\frac{16-2i}{2}",
+      correct: false,
+      usesKaTeX: true
+    },
+    {
+      value: "\\frac{16-4i}{2}",
+      correct: true,
+      usesKaTeX: true
+    },
+    {
+      value: "\\frac{16+6i}{2}",
+      correct: false,
+      usesKaTeX: true
+    }
+  ]);
+  addition5 = $ShortInput(`
+    <center>Welchen Wert besitzt $z$, sodass die Gleichung wahr ist?</center>
+    $$\\frac{4}7+\\frac{3i}{5}\\quad=\\quad\\frac{-5+19i}{30}+\\frac{z}{30}$$`,
+    answer => answer.toLowerCase().replaceAll(" ", "") === "25+2i",
+    "",
+    true
+  );
 
-
-  questions = [this.addition1, this.addition2]
-  collapsableName = "Addition";
+  questions = [
+    this.addition1,
+    this.addition2,
+    this.addition3,
+    this.addition4,
+    this.addition5]
+  collapsableName = "Addition zweier komplexer Zahlen";
 }
 
-class PolarForm implements Collapsable {
-  collapsableName: string = "Kartesiche Koordinaten und Polarkoordinaten";
-
+class Multiplication implements Collapsable {
   ph = $MultipleChoice(`abc`, [])
 
   questions = [this.ph];
+  collapsableName: string = "Multiplikation zweier komplexer Zahlen";
 
 }

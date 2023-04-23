@@ -13,6 +13,7 @@ export class MultipleChoiceComponent implements OnInit {
     type: QuestionType.MULTIPLE_CHOICE,
     title: "",
     description: "Please configure this component...",
+    hardQuestion: false,
     options: []
   };
   private correctAnswers: string[] = [];
@@ -67,6 +68,7 @@ export class MultipleChoice implements Question {
   description: string = "";
   options: MultipleChoiceOption[] = [];
   type: QuestionType = QuestionType.MULTIPLE_CHOICE;
+  hardQuestion: boolean = false;
 }
 
 export class MultipleChoiceOption {

@@ -17,6 +17,8 @@ import {NzGridModule} from "ng-zorro-antd/grid";
 import {ShortInputComponent} from '../questiontypes/short-input.component';
 import {QuestionBaseComponent} from '../questiontypes/question-base.component';
 import {NzInputModule} from "ng-zorro-antd/input";
+import {NzBadgeModule} from "ng-zorro-antd/badge";
+import {NzTagModule} from "ng-zorro-antd/tag";
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import {NzInputModule} from "ng-zorro-antd/input";
     NzRadioModule,
     FormsModule,
     NzGridModule,
-    NzInputModule
+    NzInputModule,
+    NzBadgeModule,
+    NzTagModule
   ]
 })
 export class CommonsModule {

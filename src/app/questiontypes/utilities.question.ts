@@ -2,22 +2,22 @@ import {MultipleChoice, MultipleChoiceOption} from "./multiple-choice.component"
 import {QuestionType} from "../common/misc.enums";
 import {ShortInput} from "./short-input.component";
 
-export function $MultipleChoice(description: string, options: MultipleChoiceOption[], title?: string): MultipleChoice {
- return {
-   title: title,
-   type: QuestionType.MULTIPLE_CHOICE,
-   description: description,
-   options: options
- };
+export function $MultipleChoice(description: string, options: MultipleChoiceOption[], title?: string, hardQuestion?: boolean): MultipleChoice {
+  return {
+    title: title,
+    type: QuestionType.MULTIPLE_CHOICE,
+    description: description,
+    hardQuestion: hardQuestion !== undefined && hardQuestion,
+    options: options
+  };
 }
 
-export function $ShortInput(description: string, title?: string): ShortInput {
+export function $ShortInput(description: string, checkAnswer: (s: string) => boolean, title?: string, hardQuestion?: boolean): ShortInput {
   return {
     title: title,
     type: QuestionType.SHORT_INPUT,
     description: description,
-    checkAnswer(answer: string): boolean {
-      return answer.toLowerCase().replaceAll(" ", "") === "abc";
-    }
+    hardQuestion: hardQuestion !== undefined && hardQuestion,
+    checkAnswer: checkAnswer
   };
 }

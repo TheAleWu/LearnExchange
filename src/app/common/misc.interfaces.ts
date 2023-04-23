@@ -6,7 +6,6 @@ type QuestionTypes = MultipleChoice | ShortInput;
 
 export interface Collapsable {
   collapsableName: string;
-
   questions: Array<QuestionTypes>
 }
 

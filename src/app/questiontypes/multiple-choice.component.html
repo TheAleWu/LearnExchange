@@ -1,5 +1,8 @@
 <app-question-base [title]="data.title" [parseError]="parseError">
   <div content>
+    <nz-tag *ngIf="data.hardQuestion" nzColor="volcano" style="margin-bottom: 1em">
+      <b>Schwer!</b>
+    </nz-tag>
     <ng-katex-html [html]="data.description"></ng-katex-html>
     <nz-divider/>
     <div *ngIf="feedback !== undefined">
@@ -9,7 +12,9 @@
         [nzDescription]="feedbackDescription"
         [nzShowIcon]="feedback.showIcon"
       ></nz-alert>
-      <ng-template #feedbackDescription><ng-katex-html [html]="feedback.description"/></ng-template>
+      <ng-template #feedbackDescription>
+        <ng-katex-html [html]="feedback.description"/>
+      </ng-template>
       <br/>
     </div>
     <div *ngIf="data.options.length > 0">

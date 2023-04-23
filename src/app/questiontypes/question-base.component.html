@@ -1,7 +1,7 @@
 <div class="question-base">
   <nz-card nzBordered="true" nzType="inner" [nzTitle]="title">
     <div *ngIf="parseError === ''; else hasError">
-      <ng-content select="[content]" />
+      <ng-content select="[content]"/>
     </div>
     <ng-template #hasError>
       <nz-alert
@@ -12,7 +12,7 @@
       ></nz-alert>
     </ng-template>
     <div class="validation-button">
-      <ng-content select="[validate-trigger]" />
+      <ng-content select="[validate-trigger]"/>
     </div>
   </nz-card>
 </div>

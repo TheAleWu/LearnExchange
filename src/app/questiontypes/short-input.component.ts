@@ -16,6 +16,7 @@ export class ShortInputComponent {
     type: QuestionType.SHORT_INPUT,
     title: "",
     description: "Please configure this component...",
+    hardQuestion: false,
     checkAnswer: () => false
   };
   parseError: string = "";
@@ -37,6 +38,7 @@ export class ShortInput implements Question {
   title?: string = "";
   description: string = "";
   type: QuestionType = SHORT_INPUT;
+  hardQuestion: boolean = false;
 
   // noinspection JSUnusedLocalSymbols Required for type
   checkAnswer(answer: string) {
